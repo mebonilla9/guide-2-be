@@ -23,8 +23,28 @@ public record StudentController(StudentService studentService) {
   }
 
   @GetMapping
-  public ResponseEntity<List<Student>> findAllStudents(){
+  public ResponseEntity<?> findAllStudents(){
     List<Student> students = studentService.findAllStudents();
     return new ResponseEntity<>(students, HttpStatus.OK);
   }
+
+  @GetMapping("{id}")
+  public ResponseEntity<?> findStudent(@PathVariable("id") Integer id){
+    Student student = studentService.findStudent(id);
+    return new ResponseEntity<>(student, HttpStatus.OK);
+  }
+
+  @PutMapping
+  public ResponseEntity<?> editStudent(@RequestBody StudentRequest request){
+    studentService.editStudent(request);
+    return new ResponseEntity<>(HttpStatus.OK);
+  }
+
+  @DeleteMapping("{id}")
+  public ResponseEntity<?> deleteStudent(@PathVariable("id") Integer id){
+    studentService.deleteStudent(id);
+    return new ResponseEntity<>(HttpStatus.OK);
+  }
+
+
 }

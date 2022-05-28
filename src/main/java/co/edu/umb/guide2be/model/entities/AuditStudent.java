@@ -29,9 +29,13 @@ public class AuditStudent {
   )
   private Integer id;
   @Column(length = 50)
-  private String previousName;
+  private String previousFirstName;
   @Column(length = 50)
-  private String newName;
+  private String newFirstName;
+  @Column(length = 50)
+  private String previousLastName;
+  @Column(length = 50)
+  private String newLastName;
   @Column(length = 50)
   private String previousProgram;
   @Column(length = 50)

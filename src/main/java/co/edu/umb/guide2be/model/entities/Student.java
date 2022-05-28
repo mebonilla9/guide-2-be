@@ -27,9 +27,13 @@ public class Student {
   )
   private Integer id;
   @Column(length = 20)
-  private String name;
+  private String firstName;
+  @Column(length = 20)
+  private String lastName;
   @Column(length = 50)
   private String program;
+  @Column(nullable = false)
+  private Boolean enable;
 
   @Override
   public boolean equals(Object o) {

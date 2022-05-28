@@ -1,6 +1,9 @@
 package co.edu.umb.guide2be.application.request;
 
 public record StudentRequest(
-  String name,
-  String program) {
+  Integer id,
+  String firstName,
+  String lastName,
+  String program,
+  Boolean enable) {
 }
